@@ -26,8 +26,7 @@ export const interventions = [
 
 // 1) GET -> Récupération de TOUTES les interventions
 export async function GET() {
-  console.log("GET /api/interventions TRIGGERD");
-  console.log(interventions);
+
   return NextResponse.json(interventions);
 }
 

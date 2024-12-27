@@ -1,12 +1,15 @@
 // /app/api/interventions/[id]/route.ts
-import {NextResponse} from "next/server";
+import {NextResponse, NextRequest} from "next/server";
 
 // Pour simplifier, on réutilise le même tableau (ou ta DB)
 import {interventions} from "../route";
 // Astuce: Tu peux export interventions depuis /api/interventions/route.ts,
 // ou tu stockes ça dans un fichier global. À toi de voir.
 
-export async function GET(request: Request, {params}: {params: {id: string}}) {
+export async function GET(
+  request: NextRequest,
+  {params}: {params: {id: string}}
+) {
   const {id} = params;
   const found = interventions.find((inter) => inter.id === id);
 

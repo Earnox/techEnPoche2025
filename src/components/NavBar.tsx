@@ -19,7 +19,7 @@ export default function NavBar() {
   };
 
   const navItems = [
-    {href: "/table", label: "Table", icon: "📊"},
+    {href: "/", label: "Table", icon: "📊"},
     {href: "/card-vue", label: "Card View", icon: "🃏"},
     {href: "/archive", label: "Archive", icon: "📚"},
   ];

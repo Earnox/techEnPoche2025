@@ -14,7 +14,7 @@ export default async function DashboardPage() {
       {/* {data.map((inter) => (
         <div key={inter.id}>{inter.poste}</div>
       ))} */}
-      wip
+      wip 
     </div>
   );
 }

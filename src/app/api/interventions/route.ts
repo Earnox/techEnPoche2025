@@ -2,7 +2,7 @@
 import {NextResponse} from "next/server";
 
 // Petit mock pour la démo
-export const interventions = [
+const interventions = [
   {
     id: "A47",
     poste: "Réception",
@@ -26,20 +26,19 @@ export const interventions = [
 
 // 1) GET -> Récupération de TOUTES les interventions
 export async function GET() {
-
   return NextResponse.json(interventions);
 }
 
-// 2) POST -> Création d'une nouvelle intervention
-export async function POST(request: Request) {
-  const body = await request.json();
+// // 2) POST -> Création d'une nouvelle intervention
+// export async function POST(request: Request) {
+//   const body = await request.json();
 
-  // Génération d'un ID bidon
-  const newInter = {
-    id: Math.random().toString(36).substring(2, 9).toUpperCase(),
-    ...body,
-  };
+//   // Génération d'un ID bidon
+//   const newInter = {
+//     id: Math.random().toString(36).substring(2, 9).toUpperCase(),
+//     ...body,
+//   };
 
-  interventions.push(newInter);
-  return NextResponse.json(newInter, {status: 201});
-}
+//   interventions.push(newInter);
+//   return NextResponse.json(newInter, {status: 201});
+// }

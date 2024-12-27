@@ -1,9 +1,26 @@
-// /app/api/interventions/[id]/route.ts
 import {NextResponse} from "next/server";
-
-// Pour simplifier, on réutilise le même tableau (ou ta DB)
-import {interventions} from "../route";
-
+// import {interventions} from "../route";
+const interventions = [
+  {
+    id: "A47",
+    poste: "Réception",
+    date: "2024-12-26",
+    categorie: "Mobilier",
+    status: "Demande",
+    description: "Départ 17h...",
+    lieu: "103",
+  },
+  {
+    id: "C12",
+    poste: "Réception",
+    date: "2024-12-27",
+    categorie: "Eclairage",
+    status: "Attente",
+    description: "Ampoule hotte HS...",
+    lieu: "104",
+  },
+  // etc...
+];
 export async function GET(
   request: Request,
   {params}: {params: Promise<{id: string}>}
@@ -21,9 +38,11 @@ export async function GET(
   return NextResponse.json(found);
 }
 
-export async function PUT(request: Request, {params}: {params: {id: string}}) {
-  const {id} = params;
-  console.log(id);
+export async function PUT(
+  request: Request,
+  {params}: {params: Promise<{id: string}>}
+) {
+  const {id} = await params;
   const body = await request.json();
 
   const index = interventions.findIndex((inter) => inter.id === id);
@@ -43,9 +62,9 @@ export async function PUT(request: Request, {params}: {params: {id: string}}) {
 
 export async function DELETE(
   request: Request,
-  {params}: {params: {id: string}}
+  {params}: {params: Promise<{id: string}>}
 ) {
-  const {id} = params;
+  const {id} = await params;
   const index = interventions.findIndex((inter) => inter.id === id);
 
   if (index === -1) {

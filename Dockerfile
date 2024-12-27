@@ -8,4 +8,4 @@ FROM node:16-alpine AS runner
 WORKDIR /app
 COPY --from=builder /app .
 EXPOSE 3000
-CMD ["npm", "start"]
+CMD ["npm", "start","vercel-build"]

@@ -62,7 +62,7 @@ export default function NavBar() {
               Search
             </button>
           </form>
-          <Link href='/create-intervention'>
+          <Link href='/new'>
             <button className='bg-yellow-500 px-4 py-2 rounded hover:bg-yellow-600 transition-colors'>
               + Create Intervention
             </button>
@@ -81,9 +81,7 @@ export default function NavBar() {
         </Link>
 
         {/* Create Icon */}
-        <Link
-          href='/create-intervention'
-          className='flex flex-col items-center'>
+        <Link href='/new' className='flex flex-col items-center'>
           <span role='img' aria-label='Create'>
             ➕
           </span>

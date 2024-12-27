@@ -1,5 +1,5 @@
 // /app/api/interventions/[id]/route.ts
-import {NextResponse, NextRequest} from "next/server";
+import {NextResponse} from "next/server";
 
 // Pour simplifier, on réutilise le même tableau (ou ta DB)
 import {interventions} from "../route";
